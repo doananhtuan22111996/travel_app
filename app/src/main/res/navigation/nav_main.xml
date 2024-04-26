@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="vn.travel.app.pages.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_feed" />
+
+    <fragment
+        android:id="@+id/homeLocalFragment"
+        android:name="vn.travel.app.pages.homeLocal.HomeLocalFragment"
+        android:label="fragment_home_local"
+        tools:layout="@layout/fragment_feed" />
+
+    <action
+        android:id="@+id/navigateToHomeLocal"
+        app:destination="@id/homeLocalFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_root" />
+
+    <action
+        android:id="@+id/navigateToHomeNetwork"
+        app:destination="@id/homeFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_root" />
+
+</navigation>

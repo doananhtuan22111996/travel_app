@@ -1,0 +1,22 @@
+<resources>
+    <string name="message_unknown_error">An unknown error has occurred. Please try again.</string>
+    <string name="message_authenticate_permission">You don\'t have permission to access, please login by another account</string>
+    <string name="message_no_authenticate">No authentication</string>
+
+    <string name="title_alert_force_update">New version available</string>
+    <string name="message_alert_force_update">The new version is already on the Google Play store. To continue using the application, please update it to the newest version.</string>
+
+    <string name="message_no_internet_access">Please check your network connection</string>
+
+    <string name="retry">Retry</string>
+    <string name="please_load_again">Please Load again!</string>
+    <string name="paging_local">Paging Local</string>
+    <string name="paging_network">Paging Network</string>
+    <string name="login_page">Login Page</string>
+
+    <!--    OnBoarding-->
+    <string name="imageview">ImageView</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">Formulate your strategy to receive wonderful gift packs</string>
+    <string name="make_your_own_private_travel_plan">Make your own private travel plan</string>
+    <!--End OnBoarding-->
+</resources>

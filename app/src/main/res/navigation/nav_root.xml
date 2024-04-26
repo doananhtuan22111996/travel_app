@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_root"
+    app:startDestination="@id/onBoardingFragment">
+
+    <action
+        android:id="@+id/pushToFeedFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_root"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="vn.travel.app.pages.onBoarding.OnBoardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" />
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/mainFragment"-->
+<!--        android:name="vn.travel.app.pages.main.MainFragment"-->
+<!--        android:label="fragment_main"-->
+<!--        tools:layout="@layout/fragment_main" />-->
+
+</navigation>

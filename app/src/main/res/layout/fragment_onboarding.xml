@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="vn.travel.app.pages.onBoarding.OnBoardingFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:contentDescription="@string/imageview"
+            android:scaleType="center"
+            android:src="@drawable/im_onboarding"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.App.HeadlineLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_48"
+            android:gravity="center"
+            android:text="@string/make_your_own_private_travel_plan"
+            app:layout_constraintTop_toBottomOf="@id/ivImage" />
+
+        <TextView
+            android:id="@+id/tvDes"
+            style="@style/TextAppearance.App.BodyLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            android:gravity="center"
+            android:text="@string/formulate_your_strategy_to_receive_wonderful_gift_packs"
+            app:layout_constraintEnd_toEndOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <Button
+            android:id="@+id/btnNext"
+            style="?attr/materialIconButtonFilledStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_24"
+            android:onClick="@{() -> fragment.onNext()}"
+            app:icon="@drawable/arrow_right"
+            app:iconSize="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

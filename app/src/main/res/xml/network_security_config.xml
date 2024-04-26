@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><!--TODO set domain security of app-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">www.travel.taipei</domain>
+    </domain-config>
+</network-security-config>
