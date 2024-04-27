@@ -1,15 +1,17 @@
 package vn.travel.app.utils
 
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
 
-// TODO input Generic View Binding
 object ViewBindingAdapter {
+
     @JvmStatic
-    @BindingAdapter(value = ["visible"], requireAll = true)
-    fun setVisible(textView: AppCompatTextView, visible: Boolean) {
-        textView.visibility = if (visible) View.VISIBLE else View.GONE
+    @BindingAdapter(value = ["htmlText"], requireAll = false)
+    fun setHtmlText(textView: TextView, htmlText: String?) {
+        textView.text = HtmlCompat.fromHtml(htmlText ?: "", HtmlCompat.FROM_HTML_MODE_LEGACY)
     }
 }
 

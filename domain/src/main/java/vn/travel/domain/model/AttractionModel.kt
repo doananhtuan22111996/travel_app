@@ -25,8 +25,5 @@ class AttractionModel(
     val category: List<CategoryModel> = listOf(),
     val target: List<TargetModel> = listOf(),
     val service: List<ServiceModel> = listOf(),
-    val friendly: List<String> = listOf(),
     val images: List<ImageModel> = listOf(),
-    val files: List<String> = listOf(),
-    val links: List<String> = listOf()
 ) : BaseModel()

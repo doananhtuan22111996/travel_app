@@ -25,6 +25,7 @@ class OnBoardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+        viewBinding.fragment = this
     }
 
     fun onNext() = navController.navigate(R.id.pushToFeedFragment)

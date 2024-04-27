@@ -4,7 +4,7 @@ import androidx.paging.PagingData
 import kotlinx.coroutines.flow.Flow
 import vn.travel.domain.model.AttractionModel
 
-interface PagingRepository {
+interface AttractionRepository {
 
-    suspend fun getPagingNetwork(): Flow<PagingData<AttractionModel>>
+     fun getAttractions(lang: String): Flow<PagingData<AttractionModel>>
 }

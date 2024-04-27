@@ -32,10 +32,7 @@ data class AttractionRaw(
     private val category: List<CategoryRaw> = listOf(),
     private val target: List<TargetRaw> = listOf(),
     private val service: List<ServiceRaw> = listOf(),
-    private val friendly: List<String> = listOf(),
     private val images: List<ImageRaw> = listOf(),
-    private val files: List<String> = listOf(),
-    private val links: List<String> = listOf()
 ) : BaseRaw() {
     override fun raw2Model(): AttractionModel = AttractionModel(
         id,
@@ -62,9 +59,6 @@ data class AttractionRaw(
         category.map { it.raw2Model() },
         target.map { it.raw2Model() },
         service.map { it.raw2Model() },
-        friendly,
         images.map { it.raw2Model() },
-        files,
-        links
     )
 }

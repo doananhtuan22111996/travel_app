@@ -6,7 +6,9 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.converter.gson.GsonConverterFactory
 import vn.travel.data.local.PreferenceWrapper
+import vn.travel.data.repository.AttractionRepositoryImpl
 import vn.travel.data.service.ApiService
+import vn.travel.domain.repository.AttractionRepository
 
 object DataModule {
     val localModules = module(createdAtStart = true) {
@@ -18,8 +20,7 @@ object DataModule {
         single { HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY) }
         single {
             Providers.provideOkHttpClient(
-                get<HttpLoggingInterceptor>(),
-                Providers.provideCache(androidContext())
+                get<HttpLoggingInterceptor>(), Providers.provideCache(androidContext())
             )
         }
         single {
@@ -30,6 +31,6 @@ object DataModule {
     }
 
     val repositoryModules = module {
-
+        factory<AttractionRepository> { AttractionRepositoryImpl(get<ApiService>()) }
     }
 }

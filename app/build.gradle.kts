@@ -8,8 +8,6 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("org.jetbrains.kotlin.kapt")
-//    alias(libs.plugins.googleService)
-//    alias(libs.plugins.firebaseCrashlytics)
 }
 
 // Load keystore
@@ -129,12 +127,10 @@ dependencies {
     implementation(libs.google.material)
     testImplementation(libs.junit)
 
-//    implementation(platform(libs.google.firebase.bom))
-//    implementation(libs.google.firebase.analytics)
-//    implementation(libs.google.firebase.crashlytics)
     implementation(libs.google.gson)
 
-    implementation(libs.load.images)
+    implementation(libs.load.image)
+    implementation(libs.load.gif)
 
     implementation(libs.di.koin)
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="introduction"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/padding_12"
+        android:paddingVertical="@dimen/padding_4">
+
+        <ImageView
+            android:id="@+id/ivFeed"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/imagebutton" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/TextAppearance.App.TitleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/md_theme_tertiary"
+            app:htmlText="@{name}"
+            tools:text="This is description card" />
+
+        <TextView
+            android:id="@+id/tvDes"
+            style="@style/TextAppearance.App.BodyMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/md_theme_tertiary"
+            app:htmlText="@{introduction}"
+            tools:text="This is description card" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke_1"
+            android:layout_marginTop="@dimen/margin_4"
+            android:background="@color/md_theme_primary" />
+
+    </LinearLayout>
+</layout>

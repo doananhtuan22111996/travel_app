@@ -5,6 +5,7 @@ import androidx.paging.PagingState
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 import timber.log.Timber
@@ -30,28 +31,25 @@ abstract class PagingByNetworkDataSource<RequestType : Any, ResultType : Any>(pr
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResultType> {
         return withContext(dispatcher) {
-            val apiResponse = onApi(page = if (params is LoadParams.Append) params.key else null)
+            val apiResponse = onApi(page = params.key)
             if (apiResponse.isSuccessful) {
                 val body = apiResponse.body()
                 val response = processResponse(body)
-                Timber.d("PagingByNetworkDataSource Success: + ${response?.total}")
+                val nextKey =
+                    if (params.key == null) 1 else if ((response?.total ?: 0) > 0) params.key?.plus(
+                        1
+                    ) else null
+                Timber.d("PagingByNetworkDataSource Success: + ${response?.total} + nextKey: $nextKey")
                 LoadResult.Page(
-                    data = response?.data ?: listOf(),
-                    prevKey = null,
-                    nextKey = if (response?.data?.isNotEmpty() == true && response.total > 0 && params.key != null)
-                        params.key?.plus(1)
-                    else null
+                    data = response?.data ?: listOf(), prevKey = null, nextKey = nextKey
                 )
             } else {
                 try {
-                    // TODO Paging Netowrk Error, maybe change by context API
                     val result = Gson().fromJson(
-                        apiResponse.errorBody()?.string(), ListResponse<ResultType>()::class.java
+                        apiResponse.errorBody()?.string(), String::class.java
                     )
                     Timber.e("PagingByNetworkDataSource Failure: $result")
-                    LoadResult.Error(
-                        Throwable("Network somethings wrong!!!")
-                    )
+                    LoadResult.Error(Throwable(result))
                 } catch (e: Exception) {
                     LoadResult.Error(
                         Throwable("Network somethings wrong!!! --- ${e.message}")

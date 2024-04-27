@@ -7,6 +7,7 @@
 
     <action
         android:id="@+id/pushToFeedFragment"
+        app:destination="@id/feedFragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/nav_root"
         app:popUpToInclusive="true" />
@@ -17,11 +18,10 @@
         android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding" />
 
-
-<!--    <fragment-->
-<!--        android:id="@+id/mainFragment"-->
-<!--        android:name="vn.travel.app.pages.main.MainFragment"-->
-<!--        android:label="fragment_main"-->
-<!--        tools:layout="@layout/fragment_main" />-->
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="vn.travel.app.pages.feed.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" />
 
 </navigation>
