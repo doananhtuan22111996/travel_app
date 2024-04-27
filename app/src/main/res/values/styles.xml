@@ -8,8 +8,8 @@
     </style>
 
     <style name="ThemeOverlay.App.Toolbar" parent="">
-        <item name="colorSurface">@color/md_theme_primary</item>
-        <item name="colorOnSurface">@color/md_theme_onPrimary</item>
+        <item name="colorSurface">@color/md_theme_onPrimary</item>
+        <item name="colorOnSurface">@color/md_theme_primary</item>
     </style>
     <!--    End Toolbar-->
 
@@ -46,4 +46,21 @@
         <item name="colorOnContainer">@color/md_theme_onPrimary</item>
     </style>
     <!--    End Button-->
+
+    <!--    Chip-->
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Input">
+        <item name="chipIconTint">@color/md_theme_primary</item>
+        <item name="chipBackgroundColor">@color/md_theme_background</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/md_theme_secondary</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Chip" parent="">
+        <item name="colorOnSurface">@color/md_theme_primary</item>
+    </style>
+    <!--    End Chip-->
+
 </resources>

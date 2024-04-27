@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
@@ -22,6 +22,7 @@ import vn.travel.app.databinding.FragmentFeedBinding
 import vn.travel.app.pages.main.RootViewModel
 import vn.travel.app.utils.Constants
 import vn.travel.app.utils.visible
+import vn.travel.domain.model.AttractionModel
 
 class FeedFragment : BaseFragment<RootViewModel, FeedViewModel, FragmentFeedBinding>() {
 	
@@ -34,13 +35,15 @@ class FeedFragment : BaseFragment<RootViewModel, FeedViewModel, FragmentFeedBind
 	
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		adapter = FeedAdapter()
+		adapter = FeedAdapter(this::onItemClickListener)
 	}
 	
 	override fun onInit(view: View, savedInstanceState: Bundle?) {
 		viewBinding.layoutHeader.header.apply {
 			setTitle(getString(R.string.feed))
 			navigationIcon = null
+			menu[1].isVisible = false
+			menu[2].isVisible = false
 			setOnMenuItemClickListener {
 				if (it.itemId == R.id.language) {
 					onLanguages()
@@ -92,6 +95,7 @@ class FeedFragment : BaseFragment<RootViewModel, FeedViewModel, FragmentFeedBind
 	}
 	
 	private fun onRetry() = adapter.retry()
+	
 	private fun onLanguages() {
 		MaterialAlertDialogBuilder(requireContext()).setTitle(getString(R.string.support_languages))
 			.setItems(Constants.languages.map { "${it.first} - ${it.second}" }
@@ -100,5 +104,10 @@ class FeedFragment : BaseFragment<RootViewModel, FeedViewModel, FragmentFeedBind
 				viewBinding.rvFeed.scrollToPosition(0)
 			}.show()
 		
+	}
+	
+	private fun onItemClickListener(model: AttractionModel?) {
+		sharedViewModel.detail.value = model
+		navController.navigate(R.id.pushToDetailFragment)
 	}
 }

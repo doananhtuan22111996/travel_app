@@ -54,9 +54,7 @@
         <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
         <!--        End Button-->
-        <!--        Toolbar-->
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
-        <!--        End Toolbar-->
         <!--        Typography-->
         <item name="textAppearanceHeadlineLarge">@style/TextAppearance.App.HeadlineLarge</item>
         <item name="textAppearanceTitleLarge">@style/TextAppearance.App.TitleLarge</item>
@@ -66,7 +64,7 @@
         <item name="textAppearanceBodySmall">@style/TextAppearance.App.BodySmall</item>
         <!--        End Typography-->
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
-
+        <item name="chipStyle">@style/Widget.App.Chip</item>
     </style>
 
     <style name="Theme.SkeletonTheme.SplashScreen" parent="Theme.ApplicationTheme">

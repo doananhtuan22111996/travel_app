@@ -9,4 +9,18 @@
         android:title="@string/support_languages"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/map"
+        android:contentDescription="@string/map"
+        android:icon="@drawable/map"
+        android:title="@string/map"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/preview"
+        android:contentDescription="@string/preview_images"
+        android:icon="@drawable/baseline_collections_24"
+        android:title="@string/preview_images"
+        app:showAsAction="ifRoom" />
+
 </menu>

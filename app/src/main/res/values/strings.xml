@@ -20,5 +20,10 @@
     <string name="welcome">Welcome</string>
     <string name="imagebutton">ImageButton</string>
     <string name="support_languages">Support Languages</string>
+    <string name="detail">Detail</string>
+    <string name="preview_images">Preview Images</string>
+    <string name="map">Map</string>
+    <string name="categories">Categories</string>
+    <string name="services">Services</string>
 
 </resources>

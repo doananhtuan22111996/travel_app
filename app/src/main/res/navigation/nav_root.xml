@@ -12,6 +12,14 @@
         app:popUpTo="@id/nav_root"
         app:popUpToInclusive="true" />
 
+    <action
+        android:id="@+id/pushToDetailFragment"
+        app:destination="@id/detailFragment" />
+
+    <action
+        android:id="@+id/pushToWebViewFragment"
+        app:destination="@id/webViewFragment" />
+
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="vn.travel.app.pages.onBoarding.OnBoardingFragment"
@@ -23,5 +31,17 @@
         android:name="vn.travel.app.pages.feed.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" />
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="vn.travel.app.pages.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="vn.travel.app.pages.webView.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
 
 </navigation>
