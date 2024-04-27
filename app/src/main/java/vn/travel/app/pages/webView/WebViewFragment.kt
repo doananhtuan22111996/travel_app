@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
+import vn.travel.app.R
 import vn.travel.app.databinding.FragmentWebViewBinding
 import vn.travel.app.pages.main.RootViewModel
+import vn.travel.app.utils.Constants
 
 class WebViewFragment : Fragment() {
 	private val sharedViewModel: RootViewModel by activityViewModel()
@@ -30,7 +32,6 @@ class WebViewFragment : Fragment() {
 		super.onViewCreated(view, savedInstanceState)
 		navController = Navigation.findNavController(view)
 		onInit()
-		bindViewModel()
 	}
 	
 	private fun onInit() {
@@ -40,28 +41,22 @@ class WebViewFragment : Fragment() {
 				navController.popBackStack()
 			}
 		}
-	}
-	
-	private fun bindViewModel() {
-		sharedViewModel.detail.observe(viewLifecycleOwner) {
-			it?.let {
-				viewBinding.layoutHeader.header.apply {
-					title = it.name
+		
+		val name = arguments?.getString(Constants.KEY_TITLE, "") ?: getString(R.string.detail)
+		viewBinding.layoutHeader.header.title = name
+		val urlLoad = arguments?.getString(Constants.KEY_URL, "") ?: ""
+		viewBinding.webView.apply {
+			loadUrl(urlLoad)
+			settings.javaScriptCanOpenWindowsAutomatically = true
+			webViewClient = object : WebViewClient() {
+				override fun onLoadResource(view: WebView?, url: String?) {
+					super.onLoadResource(view, url)
+					sharedViewModel.setLoadingOverlay(url == urlLoad)
 				}
-				viewBinding.webView.apply {
-					loadUrl(it.url)
-					settings.javaScriptCanOpenWindowsAutomatically = true
-					webViewClient = object : WebViewClient() {
-						override fun onLoadResource(view: WebView?, url: String?) {
-							super.onLoadResource(view, url)
-							sharedViewModel.setLoadingOverlay(url == it.url)
-						}
-						
-						override fun onPageFinished(view: WebView?, url: String?) {
-							super.onPageFinished(view, url)
-							sharedViewModel.setLoadingOverlay(false)
-						}
-					}
+				
+				override fun onPageFinished(view: WebView?, url: String?) {
+					super.onPageFinished(view, url)
+					sharedViewModel.setLoadingOverlay(false)
 				}
 			}
 		}

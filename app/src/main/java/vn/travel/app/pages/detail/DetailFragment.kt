@@ -13,6 +13,7 @@ import vn.travel.app.base.BaseFragment
 import vn.travel.app.databinding.FragmentDetailBinding
 import vn.travel.app.databinding.ItemSectionBinding
 import vn.travel.app.pages.main.RootViewModel
+import vn.travel.app.utils.Constants
 import vn.travel.app.utils.visible
 
 class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDetailBinding>() {
@@ -60,6 +61,7 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 				viewBinding.introduction = it.introduction
 				viewBinding.address = it.address
 				viewBinding.link = it.url
+				viewBinding.officialSite = it.officialSite
 				viewModel.category.value = it.category
 				viewModel.service.value = it.service
 				if (it.images.isEmpty()) {
@@ -106,6 +108,18 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 		sharedViewModel.detail.value = null
 	}
 	
-	fun onLink() = navController.navigate(R.id.pushToWebViewFragment)
+	fun onLink() {
+		val bundle = Bundle()
+		bundle.putString(Constants.KEY_TITLE, sharedViewModel.detail.value?.name ?: "")
+		bundle.putString(Constants.KEY_URL, viewBinding.link)
+		navController.navigate(R.id.pushToWebViewFragment, args = bundle)
+	}
+	
+	fun onOfficialSite() {
+		val bundle = Bundle()
+		bundle.putString(Constants.KEY_TITLE, sharedViewModel.detail.value?.name ?: "")
+		bundle.putString(Constants.KEY_URL, viewBinding.officialSite)
+		navController.navigate(R.id.pushToWebViewFragment, args = bundle)
+	}
 	
 }

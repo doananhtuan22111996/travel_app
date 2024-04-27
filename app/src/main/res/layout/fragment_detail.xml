@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="introduction"
             type="String" />
@@ -15,6 +17,10 @@
 
         <variable
             name="link"
+            type="String" />
+
+        <variable
+            name="officialSite"
             type="String" />
 
         <variable
@@ -80,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_8"
+                    android:visibility="@{introduction.isEmpty() ? View.GONE : View.VISIBLE}"
                     app:htmlText="@{introduction}"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_8"
                     android:text="@{address}"
+                    android:visibility="@{address.isEmpty() ? View.GONE : View.VISIBLE}"
                     app:layout_constraintTop_toBottomOf="@id/tvIntroduction" />
 
                 <TextView
@@ -101,7 +109,20 @@
                     android:onClick="@{() -> fragment.onLink()}"
                     android:text="@{link}"
                     android:textColor="@color/md_theme_primary"
+                    android:visibility="@{link.isEmpty() ? View.GONE : View.VISIBLE}"
                     app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+                <TextView
+                    android:id="@+id/btnOfficialSite"
+                    style="@style/TextAppearance.App.BodySmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:onClick="@{() -> fragment.onOfficialSite()}"
+                    android:text="@{officialSite}"
+                    android:textColor="@color/md_theme_primary"
+                    android:visibility="@{officialSite.isEmpty() ? View.GONE : View.VISIBLE}"
+                    app:layout_constraintTop_toBottomOf="@id/btnLink" />
 
                 <include
                     android:id="@+id/layoutCategory"
@@ -110,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_8"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btnLink" />
+                    app:layout_constraintTop_toBottomOf="@id/btnOfficialSite" />
 
                 <include
                     android:id="@+id/layoutService"
