@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/language"
+        android:contentDescription="@string/support_languages"
+        android:icon="@drawable/baseline_language_24"
+        android:title="@string/support_languages"
+        app:showAsAction="ifRoom" />
+
+</menu>
