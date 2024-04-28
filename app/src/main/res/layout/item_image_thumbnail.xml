@@ -8,5 +8,6 @@
         android:id="@+id/ivImage"
         android:layout_width="150dp"
         android:layout_height="100dp"
+        android:layout_marginEnd="@dimen/margin_4"
         android:contentDescription="@string/imageview" />
 </FrameLayout>

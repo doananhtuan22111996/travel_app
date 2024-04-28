@@ -43,6 +43,7 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 					}
 					
 					R.id.preview -> {
+						navController.navigate(R.id.pushToPreviewFragment)
 						true
 					}
 					
@@ -109,12 +110,15 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 		viewModel.images.observe(this) {
 			if (it.isEmpty()) {
 				viewBinding.layoutImages.root.visible(false)
+				viewBinding.header.menu[2].isVisible = false
 			} else {
 				it.forEach { model ->
 					val binding = ItemImageThumbnailBinding.inflate(LayoutInflater.from(context))
+					binding.root.setOnClickListener {
+						navController.navigate(R.id.pushToPreviewFragment)
+					}
 					binding.ivImage.load(model.src, builder = {
-						crossfade(true)
-						transformations(RoundedCornersTransformation(radius = 12f))
+						transformations(RoundedCornersTransformation(radius = 16f))
 						placeholder(R.drawable.im_onboarding)
 						error(R.drawable.im_onboarding)
 					})

@@ -29,6 +29,7 @@ navigationFragmentKtx = "2.7.7"
 navigationUiKtx = "2.7.7"
 gson = "2.10.1"
 ksp="1.9.23-1.0.20"
+dotsindicator="5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -56,6 +57,7 @@ logger-timber = { group = "com.jakewharton.timber", name = "timber", version.ref
 logger-okhttp = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLogger" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+components-dotsindicator = { group = "com.tbuonomo", name = "dotsindicator", version.ref = "dotsindicator" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

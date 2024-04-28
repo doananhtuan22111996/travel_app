@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dotIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_16"
+        app:dotsColor="@color/material_on_surface_disabled"
+        app:dotsCornerRadius="10dp"
+        app:dotsSize="10dp"
+        app:dotsSpacing="@dimen/padding_4"
+        app:dotsWidthFactor="3"
+        app:layout_constraintBottom_toBottomOf="@id/vPager"
+        app:layout_constraintEnd_toEndOf="@id/vPager"
+        app:layout_constraintStart_toStartOf="@id/vPager"
+        app:selectedDotColor="@color/md_theme_primary" />
+
+    <ImageButton
+        android:id="@+id/btnClose"
+        style="?attr/materialIconButtonFilledStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        android:contentDescription="@string/imageview"
+        android:src="@drawable/baseline_close_24"
+        app:layout_constraintEnd_toEndOf="@id/vPager"
+        app:layout_constraintTop_toTopOf="@id/vPager" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

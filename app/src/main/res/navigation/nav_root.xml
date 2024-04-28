@@ -20,6 +20,10 @@
         android:id="@+id/pushToWebViewFragment"
         app:destination="@id/webViewFragment" />
 
+    <action
+        android:id="@+id/pushToPreviewFragment"
+        app:destination="@id/previewFragment" />
+
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="vn.travel.app.pages.onBoarding.OnBoardingFragment"
@@ -43,5 +47,11 @@
         android:name="vn.travel.app.pages.webView.WebViewFragment"
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" />
+
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="vn.travel.app.pages.preview.PreviewFragment"
+        android:label="fragment_preview"
+        tools:layout="@layout/fragment_preview" />
 
 </navigation>

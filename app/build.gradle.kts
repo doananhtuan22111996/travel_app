@@ -135,4 +135,6 @@ dependencies {
     implementation(libs.di.koin)
 
     implementation(libs.logger.timber)
+    
+    implementation(libs.components.dotsindicator)
 }
