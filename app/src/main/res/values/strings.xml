@@ -25,5 +25,6 @@
     <string name="map">Map</string>
     <string name="categories">Categories</string>
     <string name="services">Services</string>
+    <string name="images">Images</string>
 
 </resources>

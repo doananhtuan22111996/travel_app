@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.get
 import coil.load
+import coil.size.Scale
+import coil.transform.RoundedCornersTransformation
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import vn.travel.app.R
 import vn.travel.app.base.BaseFragment
 import vn.travel.app.databinding.FragmentDetailBinding
+import vn.travel.app.databinding.ItemImageThumbnailBinding
 import vn.travel.app.databinding.ItemSectionBinding
 import vn.travel.app.pages.main.RootViewModel
 import vn.travel.app.utils.Constants
@@ -49,6 +52,7 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 		}
 		viewBinding.layoutCategory.tvTitle.text = getString(R.string.categories)
 		viewBinding.layoutService.tvTitle.text = getString(R.string.services)
+		viewBinding.layoutImages.tvTitle.text = getString(R.string.images)
 	}
 	
 	override fun bindViewModel() {
@@ -60,10 +64,10 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 			it?.let {
 				viewBinding.introduction = it.introduction
 				viewBinding.address = it.address
-				viewBinding.link = it.url
 				viewBinding.officialSite = it.officialSite
 				viewModel.category.value = it.category
 				viewModel.service.value = it.service
+				viewModel.images.value = it.images
 				if (it.images.isEmpty()) {
 					viewBinding.ivImage.load(R.drawable.im_onboarding, builder = {
 						crossfade(true)
@@ -101,18 +105,29 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 			}
 			
 		}
+		
+		viewModel.images.observe(this) {
+			if (it.isEmpty()) {
+				viewBinding.layoutImages.root.visible(false)
+			} else {
+				it.forEach { model ->
+					val binding = ItemImageThumbnailBinding.inflate(LayoutInflater.from(context))
+					binding.ivImage.load(model.src, builder = {
+						crossfade(true)
+						transformations(RoundedCornersTransformation(radius = 12f))
+						placeholder(R.drawable.im_onboarding)
+						error(R.drawable.im_onboarding)
+					})
+					viewBinding.layoutImages.linearLayout.addView(binding.root)
+				}
+			}
+			
+		}
 	}
 	
 	override fun onDestroy() {
 		super.onDestroy()
 		sharedViewModel.detail.value = null
-	}
-	
-	fun onLink() {
-		val bundle = Bundle()
-		bundle.putString(Constants.KEY_TITLE, sharedViewModel.detail.value?.name ?: "")
-		bundle.putString(Constants.KEY_URL, viewBinding.link)
-		navController.navigate(R.id.pushToWebViewFragment, args = bundle)
 	}
 	
 	fun onOfficialSite() {
