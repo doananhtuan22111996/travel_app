@@ -25,12 +25,9 @@ class ImageFragment : Fragment() {
 		super.onViewCreated(view, savedInstanceState)
 		val url = arguments?.getString(Constants.KEY_URL, "") ?: ""
 		if (url.isEmpty()) {
-			viewBinding.ivImage.load(R.drawable.im_onboarding, builder = {
-				crossfade(true)
-			})
+			viewBinding.ivImage.load(R.drawable.im_onboarding)
 		} else {
 			viewBinding.ivImage.load(url, builder = {
-				crossfade(true)
 				placeholder(R.drawable.im_onboarding)
 				error(R.drawable.im_onboarding)
 			})

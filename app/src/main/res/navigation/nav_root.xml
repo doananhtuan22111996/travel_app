@@ -24,6 +24,10 @@
         android:id="@+id/pushToPreviewFragment"
         app:destination="@id/previewFragment" />
 
+    <action
+        android:id="@+id/pushToMapFragment"
+        app:destination="@id/mapFragment" />
+
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="vn.travel.app.pages.onBoarding.OnBoardingFragment"
@@ -53,5 +57,11 @@
         android:name="vn.travel.app.pages.preview.PreviewFragment"
         android:label="fragment_preview"
         tools:layout="@layout/fragment_preview" />
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="vn.travel.app.pages.map.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 
 </navigation>

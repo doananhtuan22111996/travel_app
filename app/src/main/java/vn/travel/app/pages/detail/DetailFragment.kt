@@ -39,6 +39,7 @@ class DetailFragment : BaseFragment<RootViewModel, DetailViewModel, FragmentDeta
 			setOnMenuItemClickListener {
 				when (it.itemId) {
 					R.id.map -> {
+						navController.navigate(R.id.pushToMapFragment)
 						true
 					}
 					

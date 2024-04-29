@@ -5,6 +5,7 @@ import org.koin.dsl.module
 import vn.travel.app.pages.detail.DetailViewModel
 import vn.travel.app.pages.feed.FeedViewModel
 import vn.travel.app.pages.main.RootViewModel
+import vn.travel.app.pages.map.MapViewModel
 import vn.travel.domain.usecase.AttractionUseCase
 
 internal object AppModules {
@@ -12,5 +13,6 @@ internal object AppModules {
 		viewModel { RootViewModel() }
 		viewModel { FeedViewModel(get<AttractionUseCase>()) }
 		viewModel { DetailViewModel() }
+		viewModel { MapViewModel() }
 	}
 }
