@@ -15,6 +15,7 @@ import vn.travel.app.base.BaseViewModel
 import vn.travel.app.utils.Constants
 import vn.travel.domain.model.AttractionModel
 import vn.travel.domain.usecase.AttractionUseCase
+import java.util.Locale
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class FeedViewModel(private val useCase: AttractionUseCase) : BaseViewModel() {
@@ -24,10 +25,13 @@ class FeedViewModel(private val useCase: AttractionUseCase) : BaseViewModel() {
 	val paging: Flow<PagingData<AttractionModel>>
 	
 	init {
+		val lang = if (AppCompatDelegate.getApplicationLocales().toLanguageTags()
+				.isEmpty()
+		) Locale.getDefault().language else AppCompatDelegate.getApplicationLocales()
+			.toLanguageTags()
 		val langFlow = langCode.distinctUntilChanged().onStart {
 			emit(
-				AppCompatDelegate.getApplicationLocales().toLanguageTags().lowercase()
-					.replace("in", "id")
+				lang.lowercase().replace("in", "id")
 			)
 		}
 		paging = langFlow.flatMapLatest {
