@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">ลองอีกครั้ง</string>
+    <string name="please_load_again">กรุณาโหลดอีกครั้ง!</string>
+    <string name="feed">อาหาร</string>
+    <string name="detail">รายละเอียด</string>
+
+    <string name="imageview">ดูภาพ</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">กำหนดกลยุทธ์ของคุณเพื่อรับชุดของขวัญสุดวิเศษ</string>
+    <string name="make_your_own_private_travel_plan">จัดทำแผนการเดินทางส่วนตัวของคุณเอง</string>
+    <string name="welcome">ยินดีต้อนรับ</string>
+    <string name="imagebutton">ปุ่มรูปภาพ</string>
+    <string name="support_languages">รองรับภาษา</string>
+    <string name="preview_images">ดูตัวอย่างรูปภาพ</string>
+    <string name="map">แผนที่</string>
+    <string name="categories">หมวดหมู่</string>
+    <string name="services">บริการ</string>
+    <string name="images">รูปภาพ</string>
+</resources>

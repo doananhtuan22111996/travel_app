@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">Mencoba kembali</string>
+    <string name="please_load_again">Silakan Muat lagi!</string>
+    <string name="feed">Memberi makan</string>
+    <string name="detail">Detil</string>
+
+    <string name="imageview">Tampilan Gambar</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">Rumuskan strategi Anda untuk menerima paket hadiah yang luar biasa</string>
+    <string name="make_your_own_private_travel_plan">Buatlah rencana perjalanan pribadi Anda sendiri</string>
+    <string name="welcome">Selamat datang</string>
+    <string name="imagebutton">Tombol Gambar</string>
+    <string name="support_languages">Bahasa Pendukung</string>
+    <string name="preview_images">Pratinjau Gambar</string>
+    <string name="map">Peta</string>
+    <string name="categories">Kategori</string>
+    <string name="services">Jasa</string>
+    <string name="images">Gambar-gambar</string>
+</resources>

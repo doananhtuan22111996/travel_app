@@ -1,8 +1,10 @@
 package vn.travel.app.pages.feed
 
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -14,23 +16,28 @@ import vn.travel.app.utils.Constants
 import vn.travel.domain.model.AttractionModel
 import vn.travel.domain.usecase.AttractionUseCase
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class FeedViewModel(private val useCase: AttractionUseCase) : BaseViewModel() {
-
-    private val langCode = MutableSharedFlow<String>()
-
-    val paging: Flow<PagingData<AttractionModel>>
-
-    init {
-        val langFlow =
-            langCode.distinctUntilChanged().onStart { emit(Constants.languages.last().first) }
-        paging = langFlow.flatMapLatest {
-            load(it)
-        }.cachedIn(viewModelScope)
-    }
-
-    fun onLanguage(lang: String) {
-        viewModelScope.launch { langCode.emit(lang) }
-    }
-
-    private fun load(lang: String): Flow<PagingData<AttractionModel>> = useCase.execute(lang)
+	
+	private val langCode = MutableSharedFlow<String>()
+	
+	val paging: Flow<PagingData<AttractionModel>>
+	
+	init {
+		val langFlow = langCode.distinctUntilChanged().onStart {
+			emit(
+				AppCompatDelegate.getApplicationLocales().toLanguageTags().lowercase()
+					.replace("in", "id")
+			)
+		}
+		paging = langFlow.flatMapLatest {
+			load(it)
+		}.cachedIn(viewModelScope)
+	}
+	
+	fun onLanguage(lang: String) {
+		viewModelScope.launch { langCode.emit(lang) }
+	}
+	
+	private fun load(lang: String): Flow<PagingData<AttractionModel>> = useCase.execute(lang)
 }

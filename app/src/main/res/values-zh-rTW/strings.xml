@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">重試</string>
+    <string name="please_load_again">請重新加載!</string>
+    <string name="feed">餵食</string>
+    <string name="detail">細節</string>
+
+    <string name="imageview">圖像視圖</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">制定您的策略以獲得精美禮包</string>
+    <string name="make_your_own_private_travel_plan">制定您自己的私人旅行計劃</string>
+    <string name="welcome">歡迎</string>
+    <string name="imagebutton">圖像按鈕</string>
+    <string name="support_languages">支援語言</string>
+    <string name="preview_images">預覽影像</string>
+    <string name="map">地圖</string>
+    <string name="categories">類別</string>
+    <string name="services">服務</string>
+    <string name="images">圖片</string>
+</resources>

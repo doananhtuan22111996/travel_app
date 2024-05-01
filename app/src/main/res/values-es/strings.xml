@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">Rever</string>
+    <string name="please_load_again">¡Cargue nuevamente!</string>
+    <string name="feed">Alimentar</string>
+    <string name="detail">Detalle</string>
+
+    <string name="imageview">Vista de imagen</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">Formule su estrategia para recibir maravillosos paquetes de regalo</string>
+    <string name="make_your_own_private_travel_plan">Haz tu propio plan de viaje privado</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="imagebutton">Botón Imagen</string>
+    <string name="support_languages">Idiomas de soporte</string>
+    <string name="preview_images">Vista previa de imágenes</string>
+    <string name="map">Mapa</string>
+    <string name="categories">Categorías</string>
+    <string name="services">Servicios</string>
+    <string name="images">Imágenes</string>
+</resources>

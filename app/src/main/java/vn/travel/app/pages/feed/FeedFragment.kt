@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.core.view.get
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
@@ -100,8 +102,13 @@ class FeedFragment : BaseFragment<RootViewModel, FeedViewModel, FragmentFeedBind
 		MaterialAlertDialogBuilder(requireContext()).setTitle(getString(R.string.support_languages))
 			.setItems(Constants.languages.map { "${it.first} - ${it.second}" }
 				.toTypedArray()) { _, index ->
-				viewModel.onLanguage(Constants.languages[index].first)
+				val lang = Constants.languages[index].first.lowercase()
+				viewModel.onLanguage(lang)
 				viewBinding.rvFeed.scrollToPosition(0)
+				val appLocale: LocaleListCompat =
+					LocaleListCompat.forLanguageTags(lang.replace("id", "in"))
+				// Call this on the main thread as it may require Activity.restart()
+				AppCompatDelegate.setApplicationLocales(appLocale)
 			}.show()
 		
 	}

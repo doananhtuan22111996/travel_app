@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">リトライ</string>
+    <string name="please_load_again">もう一度ロードしてください。</string>
+    <string name="feed">餌</string>
+    <string name="detail">詳細</string>
+
+    <string name="imageview">画像ビュー</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">素敵なギフトパックを受け取るための戦略を立てましょう</string>
+    <string name="make_your_own_private_travel_plan">あなただけのプライベート旅行プランを立てましょう</string>
+    <string name="welcome">いらっしゃいませ</string>
+    <string name="imagebutton">画像ボタン</string>
+    <string name="support_languages">サポート言語</string>
+    <string name="preview_images">プレビュー画像</string>
+    <string name="map">地図</string>
+    <string name="categories">カテゴリー</string>
+    <string name="services">サービス</string>
+    <string name="images">画像</string>
+</resources>

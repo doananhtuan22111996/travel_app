@@ -8,5 +8,5 @@ import vn.travel.domain.repository.AttractionRepository
 class AttractionUseCase(private val repository: AttractionRepository) :
     BaseUseCase<String, PagingData<AttractionModel>>() {
     override fun execute(vararg params: String?): Flow<PagingData<AttractionModel>> =
-        repository.getAttractions(params.first() ?: "vi")
+        repository.getAttractions(params.first() ?: "en")
 }

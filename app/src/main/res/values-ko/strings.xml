@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">다시 해 보다</string>
+    <string name="please_load_again">다시 로드해주세요!</string>
+    <string name="feed">밥을 먹이다</string>
+    <string name="detail">세부 사항</string>
+
+    <string name="imageview">이미지뷰</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">멋진 선물 팩을 받기 위한 전략을 세우세요</string>
+    <string name="make_your_own_private_travel_plan">나만의 개인 여행 계획을 세우세요</string>
+    <string name="welcome">환영</string>
+    <string name="imagebutton">이미지버튼</string>
+    <string name="support_languages">지원 언어</string>
+    <string name="preview_images">이미지 미리보기</string>
+    <string name="map">지도</string>
+    <string name="categories">카테고리</string>
+    <string name="services">서비스</string>
+    <string name="images">이미지</string>
+</resources>

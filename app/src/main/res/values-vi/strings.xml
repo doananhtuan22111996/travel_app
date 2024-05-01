@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">Thử lại</string>
+    <string name="please_load_again">Vui lòng tải lại!</string>
+    <string name="feed">Trang chủ</string>
+    <string name="detail">Chi tiết</string>
+
+    <string name="imageview">hình ảnh</string>
+    <string name="formulate_your_strategy_to_receive_wonderful_gift_packs">Xây dựng chiến lược của bạn để nhận được gói quà tặng tuyệt vời</string>
+    <string name="make_your_own_private_travel_plan">Lập kế hoạch du lịch riêng của bạn</string>
+    <string name="welcome">Chào mừng</string>
+    <string name="imagebutton">nút hình ảnh</string>
+    <string name="support_languages">Ngôn ngữ hổ trợ</string>
+    <string name="preview_images">Xem trước hình ảnh</string>
+    <string name="map">Bản đồ</string>
+    <string name="categories">Thể loại</string>
+    <string name="services">Dịch vụ</string>
+    <string name="images">Hình ảnh</string>
+</resources>
