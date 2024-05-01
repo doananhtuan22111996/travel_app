@@ -27,7 +27,7 @@
             android:configChanges="orientation|locale"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.SkeletonTheme.SplashScreen"
+            android:theme="@style/Theme.ApplicationTheme.SplashScreen"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden|stateHidden"
             tools:ignore="DiscouragedApi,LockedOrientationActivity">
             <intent-filter>

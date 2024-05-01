@@ -70,7 +70,7 @@
         <item name="chipStyle">@style/Widget.App.Chip</item>
     </style>
 
-    <style name="Theme.SkeletonTheme.SplashScreen" parent="Theme.SplashScreen">
+    <style name="Theme.ApplicationTheme.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/md_theme_primary</item>
         <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
        drawable. One of these is required. -->
